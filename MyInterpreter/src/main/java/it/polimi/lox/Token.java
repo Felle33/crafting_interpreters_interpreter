@@ -1,4 +1,4 @@
-package lox;
+package it.polimi.lox;
 
 public class Token {
     final TokenType type;

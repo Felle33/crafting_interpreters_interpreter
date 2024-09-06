@@ -1,4 +1,4 @@
-package tool;
+package it.polimi.tool;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,4 +1,4 @@
-package lox;
+package it.polimi.lox;
 
 enum TokenType {
     // Single-character tokens.

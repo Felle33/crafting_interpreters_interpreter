@@ -1,33 +1,33 @@
-package lox;
+package it.polimi.lox;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static lox.TokenType.*;
+import static it.polimi.lox.TokenType.*;
 
 public class Scanner {
     private static final Map<String, TokenType> keywords;
 
     static {
         keywords = new HashMap<>();
-        keywords.put("and",    AND);
-        keywords.put("class",  CLASS);
-        keywords.put("else",   ELSE);
-        keywords.put("false",  FALSE);
-        keywords.put("for",    FOR);
-        keywords.put("fun",    FUN);
-        keywords.put("if",     IF);
-        keywords.put("nil",    NIL);
-        keywords.put("or",     OR);
-        keywords.put("print",  PRINT);
+        keywords.put("and", AND);
+        keywords.put("class", CLASS);
+        keywords.put("else", ELSE);
+        keywords.put("false", FALSE);
+        keywords.put("for", FOR);
+        keywords.put("fun", FUN);
+        keywords.put("if", IF);
+        keywords.put("nil", NIL);
+        keywords.put("or", OR);
+        keywords.put("print", PRINT);
         keywords.put("return", RETURN);
-        keywords.put("super",  SUPER);
-        keywords.put("this",   THIS);
-        keywords.put("true",   TRUE);
-        keywords.put("var",    VAR);
-        keywords.put("while",  WHILE);
+        keywords.put("super", SUPER);
+        keywords.put("this", THIS);
+        keywords.put("true", TRUE);
+        keywords.put("var", VAR);
+        keywords.put("while", WHILE);
     }
 
     private final String source;
@@ -53,16 +53,36 @@ public class Scanner {
     private void scanToken() {
         char c = advance();
         switch (c) {
-            case '(': addToken(LEFT_PAREN); break;
-            case ')': addToken(RIGHT_PAREN); break;
-            case '{': addToken(LEFT_BRACE); break;
-            case '}': addToken(RIGHT_BRACE); break;
-            case ',': addToken(COMMA); break;
-            case '.': addToken(DOT); break;
-            case '-': addToken(MINUS); break;
-            case '+': addToken(PLUS); break;
-            case ';': addToken(SEMICOLON); break;
-            case '*': addToken(STAR); break;
+            case '(':
+                addToken(LEFT_PAREN);
+                break;
+            case ')':
+                addToken(RIGHT_PAREN);
+                break;
+            case '{':
+                addToken(LEFT_BRACE);
+                break;
+            case '}':
+                addToken(RIGHT_BRACE);
+                break;
+            case ',':
+                addToken(COMMA);
+                break;
+            case '.':
+                addToken(DOT);
+                break;
+            case '-':
+                addToken(MINUS);
+                break;
+            case '+':
+                addToken(PLUS);
+                break;
+            case ';':
+                addToken(SEMICOLON);
+                break;
+            case '*':
+                addToken(STAR);
+                break;
             case '!':
                 addToken(match('=') ? BANG_EQUAL : BANG);
                 break;
@@ -89,7 +109,9 @@ public class Scanner {
             case '\n':
                 line += 1;
                 break;
-            case '"': string(); break;
+            case '"':
+                string();
+                break;
             default:
                 if (isDigit(c)) {
                     number();
@@ -112,7 +134,7 @@ public class Scanner {
     }
 
     private void number() {
-        while(isDigit(peek())) advance();
+        while (isDigit(peek())) advance();
 
         if (peek() == '.' && isDigit(peekNext())) {
             // consume the "."
@@ -144,26 +166,26 @@ public class Scanner {
     }
 
     private boolean match(char expected) {
-        if(isAtEnd()) return false;
-        if(source.charAt(current) != expected) return false;
+        if (isAtEnd()) return false;
+        if (source.charAt(current) != expected) return false;
         current++;
         return true;
     }
 
     private char peek() {
-        if(isAtEnd()) return '\0';
+        if (isAtEnd()) return '\0';
         return source.charAt(current);
     }
 
     private char peekNext() {
-        if(current + 1 >= source.length()) return '\0';
+        if (current + 1 >= source.length()) return '\0';
         return source.charAt(current + 1);
     }
 
     private boolean isAlpha(char c) {
-        return  (c >= 'a' && c <= 'z') ||
+        return (c >= 'a' && c <= 'z') ||
                 (c >= 'A' && c <= 'Z') ||
-                 c == '_';
+                c == '_';
     }
 
     private boolean isAlphaNumeric(char c) {
