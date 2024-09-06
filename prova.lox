@@ -1,0 +1,3 @@
+print "ciao";
+// This is a comment
+var a = 10.01;
