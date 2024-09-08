@@ -13,10 +13,22 @@ public class GenerateAst {
         }
         String outputDir = args[0];
         defineAst(outputDir, "Expr", Arrays.asList(
+                "Assign   : Token name, Expr value",
                 "Binary   : Expr left, Token operator, Expr right",
                 "Grouping : Expr expression",
                 "Literal  : Object value",
-                "Unary    : Token operator, Expr right"
+                "Logical  : Expr left, Token operator, Expr right",
+                "Unary    : Token operator, Expr right",
+                "Variable : Token name"
+        ));
+
+        defineAst(outputDir, "Stmt", Arrays.asList(
+                "Block      : List<Stmt> statements",
+                "Expression : Expr expression",
+                "If         : Expr condition, Stmt thenBranch, Stmt elseBranch",
+                "Print      : Expr expression",
+                "Var        : Token name, Expr initializer",
+                "While      : Expr condition, Stmt body"
         ));
     }
 
@@ -24,7 +36,7 @@ public class GenerateAst {
         String path = outputDir + "/" + baseName + ".java";
         PrintWriter writer = new PrintWriter(path, "UTF-8");
 
-        writer.println("package lox;");
+        writer.println("package it.polimi.lox;");
         writer.println();
         writer.println("import java.util.List;");
         writer.println();
@@ -38,7 +50,6 @@ public class GenerateAst {
             defineType(writer, baseName, className, fields);
         }
 
-        writer.println();
         writer.println("  abstract <R> R accept(Visitor<R> visitor);");
 
         writer.println("}");
@@ -54,6 +65,7 @@ public class GenerateAst {
         }
 
         writer.println("  }");
+        writer.println();
     }
 
     private static void defineType(PrintWriter writer, String basename, String classname, String fieldList) {
