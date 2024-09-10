@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81106b43-8a1a-4592-a161-867e1b41bb91" name="Changes" comment="Code until chapter 11.&#10;Useful things done: functions and weird bug">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/LoxClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Expr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Expr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Resolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Resolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/lox/Stmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/polimi/tool/GenerateAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/polimi/tool/GenerateAst.java" afterDir="false" />
-    </list>
+    <list default="true" id="81106b43-8a1a-4592-a161-867e1b41bb91" name="Changes" comment="Started some code about classes (I am bored so I will come here later)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +109,7 @@
       <workItem from="1725871810927" duration="217000" />
       <workItem from="1725898663841" duration="9994000" />
       <workItem from="1725945883710" duration="4355000" />
-      <workItem from="1725981224897" duration="2037000" />
+      <workItem from="1725981224897" duration="2587000" />
     </task>
     <task id="LOCAL-00001" summary="Reconfiguring files">
       <option name="closed" value="true" />
@@ -144,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725954063116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Started some code about classes (I am bored so I will come here later)">
+      <option name="closed" value="true" />
+      <created>1725994968374</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725994968374</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +153,8 @@
     <MESSAGE value="Reconfiguring files" />
     <MESSAGE value="Code until chapter 9" />
     <MESSAGE value="Code until chapter 11.&#10;Useful things done: functions and weird bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code until chapter 11.&#10;Useful things done: functions and weird bug" />
+    <MESSAGE value="Started some code about classes (I am bored so I will come here later)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started some code about classes (I am bored so I will come here later)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
