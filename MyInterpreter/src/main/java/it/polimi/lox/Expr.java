@@ -3,8 +3,6 @@ package it.polimi.lox;
 import java.util.List;
 
 abstract class Expr {
-  abstract <R> R accept(Visitor<R> visitor);
-
     interface Visitor<R> {
       R visitAssignExpr(Assign expr);
 
@@ -55,21 +53,7 @@ abstract class Expr {
     final Expr right;
   }
 
-  static class Call extends Expr {
-    final Expr callee;
-    final Token paren;
-    final List<Expr> arguments;
-    Call(Expr callee, Token paren, List<Expr> arguments) {
-      this.callee = callee;
-      this.paren = paren;
-      this.arguments = arguments;
-    }
-
-    @Override
-    <R> R accept(Visitor<R> visitor) {
-      return visitor.visitCallExpr(this);
-    }
-  }
+  abstract <R> R accept(Visitor<R> visitor);
 
   static class Grouping extends Expr {
     Grouping(Expr expression) {
@@ -140,5 +124,22 @@ abstract class Expr {
     }
 
     final Token name;
+  }
+
+  static class Call extends Expr {
+    Call(Expr callee, Token paren, List<Expr> arguments) {
+      this.callee = callee;
+      this.paren = paren;
+      this.arguments = arguments;
+    }
+
+    @Override
+    <R> R accept(Visitor<R> visitor) {
+      return visitor.visitCallExpr(this);
+    }
+
+    final Expr callee;
+    final Token paren;
+    final List<Expr> arguments;
   }
 }

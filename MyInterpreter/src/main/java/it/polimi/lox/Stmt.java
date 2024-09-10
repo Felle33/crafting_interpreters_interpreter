@@ -5,8 +5,23 @@ import java.util.List;
 abstract class Stmt {
     abstract <R> R accept(Visitor<R> visitor);
 
+    static class Block extends Stmt {
+        Block(List<Stmt> statements) {
+            this.statements = statements;
+        }
+
+        @Override
+        <R> R accept(Visitor<R> visitor) {
+            return visitor.visitBlockStmt(this);
+        }
+
+        final List<Stmt> statements;
+    }
+
     interface Visitor<R> {
         R visitBlockStmt(Block stmt);
+
+        R visitClassStmt(Class stmt);
 
         R visitExpressionStmt(Expression stmt);
 
@@ -23,19 +38,6 @@ abstract class Stmt {
         R visitWhileStmt(While stmt);
     }
 
-    static class Block extends Stmt {
-        Block(List<Stmt> statements) {
-            this.statements = statements;
-        }
-
-        @Override
-        <R> R accept(Visitor<R> visitor) {
-            return visitor.visitBlockStmt(this);
-        }
-
-        final List<Stmt> statements;
-    }
-
     static class Expression extends Stmt {
         Expression(Expr expression) {
             this.expression = expression;
@@ -49,19 +51,18 @@ abstract class Stmt {
         final Expr expression;
     }
 
-    static class Function extends Stmt {
+    static class Class extends Stmt {
         final Token name;
-        final List<Token> params;
-        final List<Stmt> body;
-        Function(Token name, List<Token> params, List<Stmt> body) {
+        final List<Stmt.Function> methods;
+
+        Class(Token name, List<Stmt.Function> methods) {
             this.name = name;
-            this.params = params;
-            this.body = body;
+            this.methods = methods;
         }
 
         @Override
         <R> R accept(Visitor<R> visitor) {
-            return visitor.visitFunctionStmt(this);
+            return visitor.visitClassStmt(this);
         }
     }
 
@@ -95,19 +96,21 @@ abstract class Stmt {
         final Expr expression;
     }
 
-    static class Return extends Stmt {
-        final Token keyword;
-        final Expr value;
-
-        Return(Token keyword, Expr value) {
-            this.keyword = keyword;
-            this.value = value;
+    static class Function extends Stmt {
+        Function(Token name, List<Token> params, List<Stmt> body) {
+            this.name = name;
+            this.params = params;
+            this.body = body;
         }
 
         @Override
         <R> R accept(Visitor<R> visitor) {
-            return visitor.visitReturnStmt(this);
+            return visitor.visitFunctionStmt(this);
         }
+
+        final Token name;
+        final List<Token> params;
+        final List<Stmt> body;
     }
 
     static class Var extends Stmt {
@@ -138,5 +141,20 @@ abstract class Stmt {
 
         final Expr condition;
         final Stmt body;
+    }
+
+    static class Return extends Stmt {
+        Return(Token keyword, Expr value) {
+            this.keyword = keyword;
+            this.value = value;
+        }
+
+        @Override
+        <R> R accept(Visitor<R> visitor) {
+            return visitor.visitReturnStmt(this);
+        }
+
+        final Token keyword;
+        final Expr value;
     }
 }
