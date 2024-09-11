@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81106b43-8a1a-4592-a161-867e1b41bb91" name="Changes" comment="Started some code about classes (I am bored so I will come here later)" />
+    <list default="true" id="81106b43-8a1a-4592-a161-867e1b41bb91" name="Changes" comment="Started some code about classes (I am bored so I will come here later)">
+      <change afterPath="$PROJECT_DIR$/../clox/include/debug.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../clox/include/value.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../clox/src/debug.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../clox/src/value.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clox/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../clox/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clox/include/chunk.h" beforeDir="false" afterPath="$PROJECT_DIR$/../clox/include/chunk.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clox/src/chunk.c" beforeDir="false" afterPath="$PROJECT_DIR$/../clox/src/chunk.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clox/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../clox/src/main.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,23 +42,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GenerateAst.executor": "Run",
-    "Application.Lox.executor": "Debug",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GenerateAst.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lox.executor&quot;: &quot;Debug&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Lox">
     <configuration name="GenerateAst" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.polimi.tool.GenerateAst" />
@@ -110,6 +119,7 @@
       <workItem from="1725898663841" duration="9994000" />
       <workItem from="1725945883710" duration="4355000" />
       <workItem from="1725981224897" duration="2587000" />
+      <workItem from="1726033545549" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="Reconfiguring files">
       <option name="closed" value="true" />

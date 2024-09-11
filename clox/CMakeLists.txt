@@ -5,9 +5,12 @@ project(clox)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(SOURCES
-    src/main.c
-    src/chunk.c
-    src/memory.c
+        src/main.c
+        src/chunk.c
+        src/memory.c
+        src/debug.c
+        src/value.c
+        src/vm.c
 )
 
 # Add the executable
