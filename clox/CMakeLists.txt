@@ -11,6 +11,8 @@ set(SOURCES
         src/debug.c
         src/value.c
         src/vm.c
+        src/compiler.c
+        src/scanner.c
 )
 
 # Add the executable
